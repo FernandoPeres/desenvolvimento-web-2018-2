@@ -1,0 +1,31 @@
+
+
+
+Projeto Web Mobile
+
+	Tela inicial
+
+		login.php
+			- action="validar_login.php"
+
+		validar_login.php
+			- session_start();
+			- include('conexao.php');
+			- header('location:index.php'); (se houver retorno positivo do banco)
+			- header('location: login.php?msg=Usuário e/ou senha incorretos!'); (se não houver retorno positivo do banco)
+
+		index.php
+			- include('verifica_session.php');
+			- href="logout.php"
+
+		verifica_session.php
+			- envia para a página de login.php se não estiver logado
+
+		logout.php
+			- limpa session e retorna para a página de login.php
+
+		conexao.php
+			- tem credenciais para logar no banco.
+
+		index_acionamento.php 
+			- parte do código que aciona as portas do raspberry (só funciona no raspberry pi 3 B)
